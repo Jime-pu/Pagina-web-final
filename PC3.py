@@ -47,7 +47,7 @@ import random
 # Menú vertical en una barra lateral
 # Crea una barra lateral (sidebar) en la aplicación.
 with st.sidebar:
-    opciones = option_menu("Clickea aquí: ",['Inicio', "¿Qué tipo de idol eres?",'¿Que tanto sabes de los IDOLS?'] , #Seleccionamos las opciones para interactuar 
+    opciones = option_menu(['Inicio', "¿Qué tipo de idol eres?",'¿Que tanto sabes de los IDOLS?'] , #Seleccionamos las opciones para interactuar 
         icons=['0-circle','1-circle'], menu_icon="filetype-py", default_index=0)
     # Crea un menú de opciones dentro de la barra lateral -> option_menu(...)
     # Título que se mostrará encima del menú -> "Clickea aqui: "
