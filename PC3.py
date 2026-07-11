@@ -60,7 +60,7 @@ with st.sidebar:
 # OJO: Se puede eliminar el título del menú con None
 # OJO: En caso que elijas el menú de la barra lateral (sidebar) debes cambiar "selected" por "opciones"
 if opciones == 'Inicio':
-    st.markdown("<h1 style='text-align: center;'>Nombre del blog</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center;'>K-verse</h1>", unsafe_allow_html=True)
     # Muestra un título principal utilizando HTML -> st.markdown("...", unsafe_allow_html=True)
     # La etiqueta <h1> define un encabezado de nivel 1 -> "<h1 ...>...</h1>"
     # El estilo CSS 'text-align: center' centra el texto -> style='text-align: center;'
