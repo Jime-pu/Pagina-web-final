@@ -206,7 +206,7 @@ elif opciones == "¿Qué tipo de idol eres?":
             except Exception as e:
                 st.error(f"Ocurrió un error al buscar tu idol: {e}")
                 
-###Aqui es donde se hace el quiz de los chinos 
+#Aqui es donde se hace el quiz de los chinos 
 elif opciones == '¿Que tanto sabes de los IDOLS?':
     st.markdown("<h1 style='text center;'>¿Que tanto sabes de los IDOLS? uwu </h1>",unsafe_allow_html=True)    
     # Agregar un  texto para la respuesta
