@@ -78,55 +78,7 @@ if opciones == 'Inicio':
     ¿Qué te gusta de tu carrera?, 
     ¿Qué te gustaría hacer en el futuro?, 
     ¿Qué te gusta hacer en tu tiempo libre?
-    """
-
-    # Muestra el texto en la segunda columna utilizando HTML
-    col2.markdown(f"<div style='text-align: justify; font-size: 18px;'>{texto}</div>", unsafe_allow_html=True)
-    # El estilo CSS justifica el texto y establece un tamaño de fuente de 18 píxeles
-    # f"<div style='text-align: justify; font-size: 15px;'>{texto}</div>"
-    # unsafe_allow_html=True permite que Streamlit interprete las etiquetas HTML incluidas en la cadena
-
-elif opciones == 'Experiencia':
-    st.markdown("<h1 style='text-align: center;'>Nombre a la sección de experiencia 💻</h1>", unsafe_allow_html=True)
-
-    # Agregar un  texto para la respuesta
-    texto_2 = """
-    Aquí escribe tu experiencia aprendiendo a programar. 
-    ¿Cómo te sentiste al principio?, 
-    ¿Qué te ha enseñado la programación?, 
-    ¿Qué te gusta de programar?, 
-    ¿Qué te gustaría hacer con la programación en el futuro?
-    ¿Cómo se relaciona lo que haz aprendido con tu carrera?
-    """
-
-    # Mostramos el texto
-    st.markdown(f"<div style='text-align: justify; font-size: 18px;'>{texto_2}</div>", unsafe_allow_html=True)
-
-    # Formato A
-    # Agregamos todo los videos realizados en las prácticas anteriores
-    # Muestra un subtítulo para identificar el contenido del video
-    st.subheader("🎥 Video 1 - YouTube")
-    # Inserta un video de YouTube directamente en la aplicación.
-    # El usuario puede reproducirlo sin salir de Streamlit.
-    st.video("https://www.youtube.com/watch?v=X_Z7d04x9-E")
-    # Agrega una breve descripción del video.
-    st.caption(
-        "En este video se presenta ...., "
-    )
-
-    # Formato B
-    # Muestra un subtítulo para identificar el contenido del video
-    st.subheader("🎥 Video 1 - Google Drive")
-    # Crea un botón que redirige al usuario a un video alojado en Google Drive. 
-    # Al hacer clic, el video se abrirá en una nueva pestaña del navegador.
-    st.link_button(
-            "Ver video",
-            "https://drive.google.com/file/d/1REvRXSu3GuGD73w8j44135MkRiezd0gP/view?usp=drive_link"
-        )
-    # Agrega una breve descripción del video.
-    st.caption(
-        "En este video se presenta ...., "
-    )
+    """  
 ###Aqui es donde se hace el quiz de los chinos 
 elif opciones == 'Que tanto sabes de los chinos?':
     st.markdown("<h1 style='text-align: center;'>Que tanto sabes de los chinos? 💻</h1>",unsafe_allow_html=True)    
