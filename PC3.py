@@ -47,11 +47,11 @@ import random
 # Menú vertical en una barra lateral
 # Crea una barra lateral (sidebar) en la aplicación.
 with st.sidebar:
-    opciones = option_menu("Clickea aquí: ",['Inicio', 'Experiencia', 'K-pop trivia'] , 
+    opciones = option_menu("Clickea aquí: ",['Inicio', 'Experiencia', 'K-pop trivia'] , #Seleccionamos las opciones para interactuar 
         icons=['0-circle','1-circle', '2-circle','3-circle'], menu_icon="filetype-py", default_index=0)
     # Crea un menú de opciones dentro de la barra lateral -> option_menu(...)
-    # Título que se mostrará encima del menú -> "Selecciona una sección: "
-    # Lista de opciones disponibles para navegar -> ['Inicio', 'Experiencia', 'Gráficos']
+    # Título que se mostrará encima del menú -> "Clickea aqui: "
+    # Lista de opciones disponibles para navegar -> ['Inicio', 'Experiencia', 'K-pop trivia']
     # Iconos asociados a cada opción del menú -> ['0-circle','1-circle', '2-circle']
     # Icono principal que aparece junto al título del menú -> menu_icon="filetype-py"
     # Opción seleccionada por defecto (0 = Inicio) -> default_index=0
@@ -60,7 +60,7 @@ with st.sidebar:
 # OJO: Se puede eliminar el título del menú con None
 # Crea un menú de navegación horizontal y guarda la opción seleccionada por el usuario en la variable 'selected'
 selected = option_menu(
-    menu_title="Selecciona una sección: ", 
+    menu_title="None", 
     options=['Inicio', 'Experiencia', 'Kpop trivia'], 
     icons=['person-heart', 'globe-americas', 'pencil-square'], 
     menu_icon="cast", default_index=0, orientation="horizontal")
