@@ -104,7 +104,7 @@ elif opciones == "¿Qué tipo de idol eres?":
         signo_usuario = st.selectbox("¿Cuál es tu signo zodiacal?", ["Selecciona una opción"] + signos)
         rol_usuario = st.radio(
             "Si estuvieras en un grupo de K-pop, ¿qué serías?",
-            ["Vocalista", "Bailarín/a", "Rapero/a"],
+            ["Vocalista", "Bailarín/a", "Rapero/a", "Visual", "Líder"],
             horizontal=True,
             index=None,
         )
@@ -142,6 +142,8 @@ elif opciones == "¿Qué tipo de idol eres?":
                     "Vocalista": ["vocal", "vocalista", "singer"],
                     "Bailarín/a": ["bail", "dance", "dancer"],
                     "Rapero/a": ["rap", "rapero", "rapper"],
+                    "Líder": ["líder", "lider", "leader"],
+                "Visual": ["visual", "face of the group"],
                 }
 
                 filtro_signo = df["Signo"].fillna("").map(normalizar) == normalizar(signo_usuario)
