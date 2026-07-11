@@ -83,6 +83,127 @@ if opciones == 'Inicio':
     # El estilo CSS justifica el texto y establece un tamaño de fuente de 18 píxeles
     # f"<div style='text-align: justify; font-size: 15px;'>{texto}</div>"
     # unsafe_allow_html=True permite que Streamlit interprete las etiquetas HTML incluidas en la cadena
+
+# -----------------------------------------------------------------------------
+# TEST: ¿QUÉ TIPO DE IDOL ERES?
+# -----------------------------------------------------------------------------
+elif opciones == "¿Qué tipo de idol eres?":
+    st.markdown("<h1 style='text-align:center;'>✨ ¿Qué tipo de idol eres?</h1>", unsafe_allow_html=True)
+    st.markdown(
+        "<p style='text-align:center;'>Completa tus datos y descubre qué idol de nuestra base de datos combina más contigo.</p>",
+        unsafe_allow_html=True,
+    )
+
+    signos = [
+        "Aries", "Tauro", "Géminis", "Cáncer", "Leo", "Virgo",
+        "Libra", "Escorpio", "Sagitario", "Capricornio", "Acuario", "Piscis"
+    ]
+
+    with st.form("formulario_idol"):
+        nombre_usuario = st.text_input("¿Cómo te llamas?", placeholder="Escribe tu nombre")
+        signo_usuario = st.selectbox("¿Cuál es tu signo zodiacal?", ["Selecciona una opción"] + signos)
+        rol_usuario = st.radio(
+            "Si estuvieras en un grupo de K-pop, ¿qué serías?",
+            ["Vocalista", "Bailarín/a", "Rapero/a"],
+            horizontal=True,
+            index=None,
+        )
+        genero_usuario = st.radio(
+            "¿Quieres que tu resultado sea un idol femenino o masculino?",
+            ["Femenino", "Masculino", "Cualquiera"],
+            horizontal=True,
+            index=None,
+        )
+        buscar = st.form_submit_button("🔍 Descubrir mi idol", use_container_width=True)
+
+    if buscar:
+        if not nombre_usuario.strip() or signo_usuario == "Selecciona una opción" or rol_usuario is None or genero_usuario is None:
+            st.warning("Completa todas las preguntas antes de descubrir tu resultado.")
+        else:
+            try:
+                df = pd.read_excel("BASE DE DATOS.xlsx", engine="openpyxl")
+                df.columns = [str(col).strip() for col in df.columns]
+
+                # Acepta distintas formas de nombrar la columna de género en el Excel.
+                posibles_columnas_genero = ["Género", "Genero", "Sexo", "Género del idol", "Genero del idol"]
+                columna_genero = next((col for col in posibles_columnas_genero if col in df.columns), None)
+
+                columnas_obligatorias = ["Nombre artístico", "Signo", "Rol en el grupo", "Imagen del idol"]
+                faltantes = [col for col in columnas_obligatorias if col not in df.columns]
+                if faltantes:
+                    st.error("Faltan estas columnas en el Excel: " + ", ".join(faltantes))
+                    st.stop()
+
+                def normalizar(valor):
+                    return str(valor).strip().lower()
+
+                # El rol puede estar escrito como “Vocalista principal”, “Main dancer”, etc.
+                palabras_rol = {
+                    "Vocalista": ["vocal", "vocalista", "singer"],
+                    "Bailarín/a": ["bail", "dance", "dancer"],
+                    "Rapero/a": ["rap", "rapero", "rapper"],
+                }
+
+                filtro_signo = df["Signo"].fillna("").map(normalizar) == normalizar(signo_usuario)
+                filtro_rol = df["Rol en el grupo"].fillna("").map(
+                    lambda x: any(palabra in normalizar(x) for palabra in palabras_rol[rol_usuario])
+                )
+                candidatos = df[filtro_signo & filtro_rol].copy()
+
+                if genero_usuario != "Cualquiera":
+                    if columna_genero is None:
+                        st.warning("Tu Excel no tiene una columna de género; se buscará sin aplicar ese filtro.")
+                    else:
+                        equivalencias = {
+                            "Femenino": ["femenino", "mujer", "female", "f"],
+                            "Masculino": ["masculino", "hombre", "male", "m"],
+                        }
+                        filtro_genero = candidatos[columna_genero].fillna("").map(
+                            lambda x: normalizar(x) in equivalencias[genero_usuario]
+                        )
+                        candidatos_genero = candidatos[filtro_genero]
+                        if not candidatos_genero.empty:
+                            candidatos = candidatos_genero
+
+                # Si no existe una coincidencia exacta, prioriza signo y luego rol.
+                coincidencia_exacta = not candidatos.empty
+                if candidatos.empty:
+                    candidatos = df[filtro_signo].copy()
+                if candidatos.empty:
+                    candidatos = df[filtro_rol].copy()
+                if candidatos.empty:
+                    candidatos = df.copy()
+
+                idol = candidatos.sample(n=1).iloc[0]
+                st.divider()
+                st.markdown(f"## 🌟 {nombre_usuario.strip()}, tu idol es **{idol['Nombre artístico']}**")
+                if not coincidencia_exacta:
+                    st.caption("No encontramos una coincidencia exacta con todos tus datos, así que elegimos el resultado más cercano disponible.")
+
+                columna_imagen, columna_info = st.columns([1, 2], gap="large")
+                with columna_imagen:
+                    imagen = idol.get("Imagen del idol", "")
+                    if pd.notna(imagen) and str(imagen).strip():
+                        try:
+                            st.image(imagen, caption=str(idol["Nombre artístico"]), use_container_width=True)
+                        except Exception:
+                            st.warning("No se pudo abrir la imagen. Revisa la ruta o el enlace en el Excel.")
+                    else:
+                        st.info("Este idol todavía no tiene una imagen registrada.")
+
+                with columna_info:
+                    st.markdown("### Tu resultado")
+                    columnas_no_mostrar = {"Imagen del idol"}
+                    for columna in df.columns:
+                        valor = idol.get(columna)
+                        if columna not in columnas_no_mostrar and pd.notna(valor) and str(valor).strip():
+                            st.markdown(f"**{columna}:** {valor}")
+
+            except FileNotFoundError:
+                st.error("No se encontró 'BASE DE DATOS.xlsx'. Debe estar en la misma carpeta que este código.")
+            except Exception as e:
+                st.error(f"Ocurrió un error al buscar tu idol: {e}")
+                
 ###Aqui es donde se hace el quiz de los chinos 
 elif opciones == '¿Que tanto sabes de los IDOLS?':
     st.markdown("<h1 style='text center;'>¿Que tanto sabes de los IDOLS? 💻</h1>",unsafe_allow_html=True)    
