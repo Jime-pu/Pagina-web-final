@@ -94,7 +94,7 @@ if opciones == 'Que tanto sabes de los chinos?':
     
     # Poner el enlace (esto es HTML, pero escrito desde Python) Con esto podemos escribiri HTML en phyton para que el amongus te mande a un video
     st.markdown(
-        f'<a href="https://youtu.be/wDZxDBDRync?si=Hzk4bsb29-xAUfTS">'
+        f'<a href="https://youtu.be/QslJYDX3o8s?si=G-9KMIBvdvW-EJoz">'
         f'<img src="data:image/png;base64,{img_data}" width="50">'
         f'<p style="text-align:center;font-size:12px;color:gray;">Causa</p>'
         f'</a>',
