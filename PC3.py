@@ -71,7 +71,9 @@ if opciones == 'Inicio':
 
     # Define una cadena de texto multilínea que contiene una guía para redactar una presentación personal.
     texto = """
-  Hola, somos K-verse, esta página es para todas las fans del K-pop 
+  Hola, somos K-verse, Esta página es para todas las fans del KPOP. Aquí podrás averiguar qué idol serías respondiendo preguntas breves. 
+  Además, puedes jugar trivia y descubrir si eres un OG fan. O puedes probar tus conocimientos adivinando el nombre de los idols solo viendo una imagen de sus ojos. 
+¿Qué esperas?
     """  
 ###Aqui es donde se hace el quiz de los chinos 
 elif opciones == 'Que tanto sabes de los chinos?':
