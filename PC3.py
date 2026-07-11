@@ -69,12 +69,6 @@ if opciones == 'Inicio':
     # Crea dos columnas de igual tamaño para organizar el contenido de forma horizontal en la aplicación.
     col1, col2 = st.columns(2)
 
-    # Muestra una imagen en la primera columna
-    col1.image("ellie.png", caption='Ellie', width=300)
-    # "ellie.png" es el archivo de imagen que se visualizará -> Aquí debes reemplazar por tu foto de perfil
-    # El texto "Ellie" aparecerá como descripción de la imagen
-    # width=300 establece el ancho de la imagen en 300 píxeles
-
     # Define una cadena de texto multilínea que contiene una guía para redactar una presentación personal.
     texto = """
     Aquí escribe una presentación creativa sobre ti.
