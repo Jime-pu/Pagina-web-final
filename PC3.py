@@ -75,6 +75,11 @@ if opciones == 'Inicio':
       Además, puedes jugar trivia y descubrir si eres un OG fan. O puedes probar tus conocimientos adivinando el nombre de los idols solo viendo una imagen de sus ojos. 
     ¿Qué esperas?
     """  
+    # Muestra el texto en la segunda columna utilizando HTML
+    col2.markdown(f"<div style='text-align: justify; font-size: 18px;'>{texto}</div>", unsafe_allow_html=True)
+    # El estilo CSS justifica el texto y establece un tamaño de fuente de 18 píxeles
+    # f"<div style='text-align: justify; font-size: 15px;'>{texto}</div>"
+    # unsafe_allow_html=True permite que Streamlit interprete las etiquetas HTML incluidas en la cadena
 ###Aqui es donde se hace el quiz de los chinos 
 elif opciones == '¿Que tanto sabes de los IDOLS?':
     st.markdown("<h1 style='text-align: center;'>¿Que tanto sabes de los IDOLS? 💻</h1>",unsafe_allow_html=True)    
