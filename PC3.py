@@ -208,7 +208,7 @@ elif opciones == "¿Qué tipo de idol eres?":
                 
 ###Aqui es donde se hace el quiz de los chinos 
 elif opciones == '¿Que tanto sabes de los IDOLS?':
-    st.markdown("<h1 style='text center;'>¿Que tanto sabes de los IDOLS? 💻</h1>",unsafe_allow_html=True)    
+    st.markdown("<h1 style='text center;'>¿Que tanto sabes de los IDOLS? uwu </h1>",unsafe_allow_html=True)    
     # Agregar un  texto para la respuesta
     texto_4 = """
     🎤 ¡Hola! ¿Te gusta el K-pop? 💜
