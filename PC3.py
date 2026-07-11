@@ -58,20 +58,6 @@ with st.sidebar:
 
 # Menú horizontal en una barra horizontal
 # OJO: Se puede eliminar el título del menú con None
-# Crea un menú de navegación horizontal y guarda la opción seleccionada por el usuario en la variable 'selected'
-selected = option_menu(
-    menu_title="None", 
-    options=['Inicio', 'Experiencia', 'Kpop trivia'], 
-    icons=['person-heart', 'globe-americas', 'pencil-square'], 
-    menu_icon="cast", default_index=0, orientation="horizontal")
-    # Título que aparece antes de las opciones del menú -> menu_title="Selecciona una sección: "
-    # Lista de opciones que estarán disponibles en el menú -> ['Inicio', 'Experiencia', 'Gráficos']
-    # Iconos asociados a cada opción del menú -> ['person-heart', 'globe-americas', 'pencil-square']
-    # Icono principal que aparece junto al título del menú -> menu_icon="cast"
-    # Opción seleccionada por defecto (0 = Inicio) -> default_index=0
-    # Hace que el menú se muestre horizontalmente en lugar de verticalmente -> orientation="horizontal"
-
-# Verifica si el usuario ha seleccionado la opción "Inicio" en el menú de navegación horizontal.
 # OJO: En caso que elijas el menú de la barra lateral (sidebar) debes cambiar "selected" por "opciones"
 if opciones == 'Inicio':
     st.markdown("<h1 style='text-align: center;'>Nombre del blog</h1>", unsafe_allow_html=True)
