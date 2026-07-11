@@ -61,7 +61,7 @@ with st.sidebar:
 # Crea un menú de navegación horizontal y guarda la opción seleccionada por el usuario en la variable 'selected'
 selected = option_menu(
     menu_title="Selecciona una sección: ", 
-    options=['Inicio', 'Experiencia', 'Gráficos'], 
+    options=['Inicio', 'Experiencia', 'Kpop trivia'], 
     icons=['person-heart', 'globe-americas', 'pencil-square'], 
     menu_icon="cast", default_index=0, orientation="horizontal")
     # Título que aparece antes de las opciones del menú -> menu_title="Selecciona una sección: "
