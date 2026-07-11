@@ -82,7 +82,7 @@ if opciones == 'Inicio':
     # unsafe_allow_html=True permite que Streamlit interprete las etiquetas HTML incluidas en la cadena
 ###Aqui es donde se hace el quiz de los chinos 
 elif opciones == '¿Que tanto sabes de los IDOLS?':
-    st.markdown("<h1 style='text-align: center;'>¿Que tanto sabes de los IDOLS? 💻</h1>",unsafe_allow_html=True)    
+    st.markdown("<h1 style='text center;'>¿Que tanto sabes de los IDOLS? 💻</h1>",unsafe_allow_html=True)    
     # Agregar un  texto para la respuesta
     texto_4 = """
     Hola preciosa calabazita de algodon, en este quiz se te hara una prueba psicometrica 
