@@ -80,7 +80,7 @@ if opciones == 'Inicio':
     ¿Qué te gusta hacer en tu tiempo libre?
     """  
 ###Aqui es donde se hace el quiz de los chinos 
-    elif opciones == 'Que tanto sabes de los chinos?':
+elif opciones == 'Que tanto sabes de los chinos?':
     st.markdown("<h1 style='text-align: center;'>Que tanto sabes de los chinos? 💻</h1>",unsafe_allow_html=True)    
     # Agregar un  texto para la respuesta
     texto_4 = """
