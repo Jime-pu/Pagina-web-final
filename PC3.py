@@ -211,8 +211,8 @@ elif opciones == '¿Que tanto sabes de los IDOLS?':
     st.markdown("<h1 style='text center;'>¿Que tanto sabes de los IDOLS? 💻</h1>",unsafe_allow_html=True)    
     # Agregar un  texto para la respuesta
     texto_4 = """
-    Hola preciosa calabazita de algodon, en este quiz se te hara una prueba psicometrica 
-    para saber que tan fan eres de los hermosos chicos ojos razgados que cantan como los mismos angeles
+    🎤 ¡Hola! ¿Te gusta el K-pop? 💜
+Te invitamos a participar en nuestra trivia, donde podrás poner a prueba todo lo que sabes sobre el K-pop y la cultura asiática. Tenemos diferentes niveles de dificultad, así que cualquiera puede jugar. ¡Ven, participa y demuestra si eres un verdadero experto!
     """
     
     col1, col2 = st.columns(2)
