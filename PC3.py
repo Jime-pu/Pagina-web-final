@@ -47,11 +47,11 @@ import random
 # Menú vertical en una barra lateral
 # Crea una barra lateral (sidebar) en la aplicación.
 with st.sidebar:
-    opciones = option_menu("Clickea aquí: ",['Inicio', 'Experiencia', 'K-pop trivia'] , #Seleccionamos las opciones para interactuar 
+    opciones = option_menu("Clickea aquí: ",['Inicio', 'K-pop trivia'] , #Seleccionamos las opciones para interactuar 
         icons=['0-circle','1-circle', '2-circle','3-circle'], menu_icon="filetype-py", default_index=0)
     # Crea un menú de opciones dentro de la barra lateral -> option_menu(...)
     # Título que se mostrará encima del menú -> "Clickea aqui: "
-    # Lista de opciones disponibles para navegar -> ['Inicio', 'Experiencia', 'K-pop trivia']
+    # Lista de opciones disponibles para navegar -> ['Inicio','K-pop trivia']
     # Iconos asociados a cada opción del menú -> ['0-circle','1-circle', '2-circle']
     # Icono principal que aparece junto al título del menú -> menu_icon="filetype-py"
     # Opción seleccionada por defecto (0 = Inicio) -> default_index=0
@@ -80,7 +80,7 @@ if opciones == 'Inicio':
     ¿Qué te gusta hacer en tu tiempo libre?
     """  
 ###Aqui es donde se hace el quiz de los chinos 
-elif opciones == 'Que tanto sabes de los chinos?':
+if opciones == 'Que tanto sabes de los chinos?':
     st.markdown("<h1 style='text-align: center;'>Que tanto sabes de los chinos? 💻</h1>",unsafe_allow_html=True)    
     # Agregar un  texto para la respuesta
     texto_4 = """
