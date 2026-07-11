@@ -77,7 +77,7 @@ if opciones == 'Inicio':
     """  
 ###Aqui es donde se hace el quiz de los chinos 
 elif opciones == 'Que tanto sabes de los chinos?':
-    st.markdown("<h1 style='text-align: center;'>¿Que tanto sabes de los IDOLS? 💻</h1>",unsafe_allow_html=True)    
+    st.markdown("<h1 style='text-align: center;'> ¿Que tanto sabes de los IDOLS? 💻</h1>",unsafe_allow_html=True)    
     # Agregar un  texto para la respuesta
     texto_4 = """
     Hola preciosa calabazita de algodon, en este quiz se te hara una prueba psicometrica 
