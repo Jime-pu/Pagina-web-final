@@ -69,8 +69,8 @@ if opciones == 'Inicio':
     # Crea dos columnas de igual tamaño para organizar el contenido de forma horizontal en la aplicación.
     col1, col2 = st.columns(2)
     # Muestra una imagen en la primera columna
-    col1.image("ellie.png")
-    # "ellie.png" es el archivo de imagen que se visualizará -
+    col1.image("kpop.jpeg")
+    # "kpop.jpeg" es el archivo de imagen que se visualizará -
 
     # Define una cadena de texto multilínea que contiene una guía para redactar una presentación personal.
     texto = """
