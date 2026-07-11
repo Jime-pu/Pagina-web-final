@@ -76,7 +76,7 @@ if opciones == 'Inicio':
     ¿Qué esperas?
     """  
     # Muestra el texto en la segunda columna utilizando HTML
-    col2.markdown(f"<='center; font-size: 18px;'>{texto}</div>", unsafe_allow_html=True)
+    col2.markdown(f"<div style='text-align: center; font-size: 18px;'>{texto}</div>", unsafe_allow_html=True)
     # El estilo CSS justifica el texto y establece un tamaño de fuente de 18 píxeles
     # f"<div style='text-align: justify; font-size: 15px;'>{texto}</div>"
     # unsafe_allow_html=True permite que Streamlit interprete las etiquetas HTML incluidas en la cadena
